@@ -217,6 +217,7 @@ class build_ext(CheckOutdatedMixin, build_ext_):
         CheckOutdatedMixin.checking_stuff_boolean_options
 
     def run(self):
+        self.run_command('transpile_cython')
         self.check_extensions()
         super(build_ext, self).run()
 
